@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Other</title>
+        <!-- <link rel="stylesheet" href="{% static "css/mystyle.css" %}"/> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-static-top"></nav>
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a class="navbar-brand" href="{%url 'index'%}">Brand</a></li>
+                <li><a class="navbar-link" href="#">admin</a></li>
+                <li><a class="navbar-brand" href="{% url 'basic_app:other'%}">other</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container"> 
+        {% block body_block%}
+         <h1>anything outside this will be inherited if you extend</h1>
+        {% endblock %}
+    </div>
+    </body>
+</html>
